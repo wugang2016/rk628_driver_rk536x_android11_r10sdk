@@ -51,9 +51,10 @@ Since upgrading the product SDK was not feasible (it is in mass production), the
 
 Rockchip provided the kernel 6.1 driver source code (`linux-src260527.tar.gz`, `rk628-src260527.tar.gz`, `cif-src260604.tar.gz`), and the driver was backported to kernel 4.19. Key adaptations included:
 
-- Replacing kernel 6.1-specific CIF/CSI2 subsystems with the kernel 4.19 equivalents (`rkcif-externel.h`, `rockchip-csi2-dphy`, etc.).
 - Adapting V4L2 subdev API differences between kernel 6.1 and kernel 4.19.
 - Adapting clock management, GPIO, and media subsystem API changes.
+
+> **Note on CIF adaptation**: The R10 SDK CIF version is very old and its API is incompatible with the kernel 6.1 version. The `rkcif-externel.h` interface is **never called** in this port — CIF-related adaptation code is present in the source but inactive on the R10 SDK target.
 
 The ported driver compiles successfully. Basic function tests are normal. HDMI-IN signal stability issue is pending further verification.
 
