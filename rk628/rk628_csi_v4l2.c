@@ -1642,6 +1642,11 @@ static void rk628_csi_initial_setup(struct v4l2_subdev *sd)
 {
 	struct rk628_csi *csi = to_csi(sd);
 
+	#if BJ_WUGANG_DEV
+	//support hdmi in audio for bj66
+	rk628_hdmirx_audio_set_mclk_output(csi->audio_info);
+	#endif
+
 	rk628_csi_initial(sd);
 
 	csi->rk628->dphy_lane_en = 0x1f;

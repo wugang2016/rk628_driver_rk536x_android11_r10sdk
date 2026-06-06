@@ -924,6 +924,18 @@ void rk628_hdmirx_audio_i2s_ctrl(HAUDINFO info, bool enable)
 }
 EXPORT_SYMBOL(rk628_hdmirx_audio_i2s_ctrl);
 
+#if BJ_WUGANG_DEV
+void rk628_hdmirx_audio_set_mclk_output(HAUDINFO info)
+{
+	struct rk628_audioinfo *aif = (struct rk628_audioinfo *)info;
+
+	rk628_clk_mux_testout(aif->rk628, CGU_CLK_HDMIRX_AUD);
+	/* enable gpio1a0 TESTclkout */
+	rk628_i2c_write(aif->rk628, GRF_GPIO1AB_SEL_CON,
+			HIWORD_UPDATE(0x1, 0, 0));
+}
+#endif
+
 void rk628_hdmirx_audio_setup(HAUDINFO info)
 {
 	struct rk628_audioinfo *aif = (struct rk628_audioinfo *)info;

@@ -586,4 +586,9 @@ void rk628_hdmirx_cec_state_reconfiguration(struct rk628 *rk628,
 					    struct rk628_hdmirx_cec *cec);
 void rk628_hdmirx_phy_debugfs_register_create(struct rk628 *rk628, struct dentry *dir);
 void rk628_hdmirx_debugfs_create(struct rk628 *rk628, struct rk628_hdcp *hdcp);
+
+#if BJ_WUGANG_DEV
+//support hdmiin audio for bj
+void rk628_hdmirx_audio_set_mclk_output(HAUDINFO info);
+#endif
 #endif
