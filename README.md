@@ -174,6 +174,10 @@ cat /sys/kernel/debug/5-0050/registers/hdmirxphy | grep -E "0x34|0x54|0x74"
 
 GPL v2
 
+## Contact / 联系方式
+
+Email: wugang09@foxmail.com
+
 ## Acknowledgements
 
 This project was developed by porting the **kernel 6.1** RK628 driver source code provided by Rockchip FAE team (`linux-src260527.tar.gz`, `rk628-src260527.tar.gz`, `cif-src260604.tar.gz`) back to kernel 4.19.

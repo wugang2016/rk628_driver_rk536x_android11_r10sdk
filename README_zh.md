@@ -177,6 +177,10 @@ cat /sys/kernel/debug/5-0050/registers/hdmirxphy | grep -E "0x34|0x54|0x74"
 
 GPL v2
 
+## 联系方式
+
+邮箱：wugang09@foxmail.com
+
 ## 致谢
 
 本项目基于 Rockchip FAE 团队提供的 **kernel 6.1** RK628 驱动源码包（`linux-src260527.tar.gz`、`rk628-src260527.tar.gz`、`cif-src260604.tar.gz`）完成移植。
