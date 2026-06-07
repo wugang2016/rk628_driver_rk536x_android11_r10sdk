@@ -174,7 +174,7 @@ cat /sys/kernel/debug/5-0050/registers/hdmirxphy | grep -E "0x34|0x54|0x74"
 
 GPL v2
 
-## Contact / 联系方式
+## Contact
 
 Email: wugang09@foxmail.com
 
